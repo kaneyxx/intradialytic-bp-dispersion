@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# macOS and editors
+.DS_Store
+.ipynb_checkpoints/
+.vscode/
+.idea/
+
+# environments
+.venv/
+venv/
+
+# data, model files and outputs: never commit patient-level data or results
+*.parquet
+*.csv
+*.joblib
+*.pt
+runs/
+results/
+analysis/synthetic_statistics/

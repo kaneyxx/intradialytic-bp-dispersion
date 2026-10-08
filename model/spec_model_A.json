@@ -1,0 +1,51 @@
+{
+  "model": "A",
+  "description": "Model A: fitted with data from Chiayi, applied to Taichung (and Tainan).",
+  "features": [
+    "bin_index",
+    "sbp_mean_all_mmhg",
+    "dbp_mean_all_mmhg",
+    "hr_mean_all_bpm",
+    "uf_rate_mean_ml_hr",
+    "age_at_session_years",
+    "sex_female",
+    "hb_value",
+    "ca_value",
+    "actual_qb_mean_ml_min",
+    "dialysate_temperature_last_c",
+    "actual_qd_last_ml_min",
+    "delta_sbp_from_previous_bin_mmhg"
+  ],
+  "fitting_sources": ["Chiayi"],
+  "application_sources": ["Taichung", "Tainan"],
+  "seed": 20260612,
+  "development_fraction": 0.2,
+  "training_config": {
+    "num_bases": 24,
+    "batch_size": 16384,
+    "n_epochs": 1500,
+    "warmup_epochs": 2,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.0005,
+    "gradient_clip": 1.0,
+    "sigma_floor_sbp": 2.0,
+    "sigma_floor_dbp": 1.5,
+    "sigma_cap": 60.0,
+    "epsilon": 1e-06,
+    "loss_weight_sbp": 1.0,
+    "loss_weight_dbp": 1.0,
+    "ensemble_members": 5,
+    "bootstrap_replicates": 1,
+    "patience": 100,
+    "min_delta": 0.0001,
+    "seed": 20260612
+  },
+  "early_stopping": {
+    "evaluate_every": 5,
+    "patience_epochs": 100,
+    "min_delta": 0.0001,
+    "selector": "development_row_weighted_equal_SBP_DBP_Gaussian_NLL",
+    "save": "strict_minimum_among_evaluated_epochs",
+    "initial_cap": 1500
+  }
+}

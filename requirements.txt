@@ -1,0 +1,13 @@
+# Package versions of the analysis environment (Python 3.14.2).
+# torch was the CUDA 13.0 build (2.9.1+cu130); for that build, install torch from https://download.pytorch.org/whl/cu130
+# statsmodels is used only to cross-check the cluster-robust standard errors, which are computed without it.
+# pyarrow, scipy, threadpoolctl and joblib are not pinned.
+numpy==2.3.5
+pandas==2.3.3
+scikit-learn==1.8.0
+statsmodels==0.14.6
+torch==2.9.1
+pyarrow
+scipy
+threadpoolctl
+joblib
