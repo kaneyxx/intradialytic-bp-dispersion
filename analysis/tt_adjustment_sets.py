@@ -1,8 +1,10 @@
 """Taichung adjustment sets of the dated analysis plan (Table S2); patient data stay in memory.
 
 Usage: python -m analysis.tt_adjustment_sets --frame <TT_frame.parquet> --out <dir>
-M1 is Table S2 set 1, M2 the main model (set 4) and M3 set 5; M1 refitted after excluding patients whose death date
-came only from a status-start record is set 6. Only aggregate tables and JSON summaries are saved.
+M1 is Table S2 set 1 and M3 set 5; M1 refitted after excluding patients whose death date came only from a
+status-start record is set 6. M2 has the design of the main model (set 4) but its intervals use 300 resamples; the
+set 4 intervals in Table S2 come from analysis.run_main_model (1,000 resamples). Only aggregate tables and JSON
+summaries are saved.
 ``--self-test`` exercises estimation and cluster bootstrap with synthetic data.
 """
 from __future__ import annotations

@@ -2,7 +2,8 @@
 groups (Table S5, Figure S4).
 
 Each input's fitted contribution to log sigma (numeric term plus missing-indicator term, averaged over the five members
-and centred on the member's fitting-partition mean) is computed for every forecast, then averaged over the forecasts of
+and centred on the member's mean over the forecast-eligible rows of the model's fitting sources) is computed for every
+forecast, then averaged over the forecasts of
 each patient-quarter's exposure window and summed within the groups: blood pressure and heart rate; treatment settings
 and session hour; demographics; laboratory values.
 """
@@ -27,7 +28,8 @@ CONTRIBUTIONS = ['ls_c_' + f for f in FEATURES]
 
 def row_contributions(bundle, pre, raw, centers):
     """Grouped (numeric + indicator) member-average contributions to log sigma for each row of `raw`, centred with the
-    per-member means `centers` (model.contributions.member_centers for head 'log_sigma' on the fitting partition)."""
+    per-member means `centers` (model.contributions.member_centers for head 'log_sigma' on the forecast-eligible rows of
+    the model's fitting sources)."""
     import torch
     torch.set_num_threads(2)
     n, nf = len(raw), len(FEATURES)

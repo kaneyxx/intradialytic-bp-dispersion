@@ -1,6 +1,6 @@
 {
   "model": "A",
-  "description": "Model A: fitted with data from Chiayi, applied to Taichung (and Tainan).",
+  "description": "Model A: fitted with data from Chiayi, applied to Taichung.",
   "features": [
     "bin_index",
     "sbp_mean_all_mmhg",
@@ -17,7 +17,7 @@
     "delta_sbp_from_previous_bin_mmhg"
   ],
   "fitting_sources": ["Chiayi"],
-  "application_sources": ["Taichung", "Tainan"],
+  "application_sources": ["Taichung"],
   "seed": 20260612,
   "development_fraction": 0.2,
   "training_config": {

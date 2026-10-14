@@ -2,7 +2,8 @@
 forecasts (Figure S4).
 
 For each system: the forecasts of the exposure windows are scored with the model that produced them (per-input
-contributions to log sigma, centred on the model's fitting partition), averaged per patient-quarter and summed within
+contributions to log sigma, centred on the forecast-eligible rows of the model's fitting sources), averaged per
+patient-quarter and summed within
 four groups (contribution_windows); then the exploratory group models (component_statistics.analyze_components) and the
 outcome-free profiles (component_profiles.run_profiles) are run.
 

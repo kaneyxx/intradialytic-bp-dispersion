@@ -2,7 +2,8 @@
 
 Because both heads of the model are additive, the contribution of an input is its learned function evaluated on a grid
 of values while every other input is held at its fitting-partition median. Contributions are centred on each member's
-mean contribution over a reference set of rows (the fitting partition), so that the curves of one model are comparable
+mean contribution over a reference set of rows (all forecast-eligible rows of --reference-sources, that is the fitting
+and development partitions of the model's fitting sources), so that the curves of one model are comparable
 with each other; the numeric term and the missing-indicator term of an input are added together. Curves are summarised
 as the mean across the five members and the member range.
 
